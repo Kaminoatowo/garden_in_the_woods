@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://b77qilc0a0d1x"]
+
+[ext_resource type="PackedScene" uid="uid://d1j7s3ig41yvd" path="res://Player/Player.tscn" id="1_5i6yh"]
+[ext_resource type="Texture2D" uid="uid://6doxtcpjqy2g" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Water.tres" id="1_dfcm1"]
+[ext_resource type="PackedScene" uid="uid://cd7aatww2np5p" path="res://Tilemaps/Grass.tscn" id="3_3wn2p"]
+[ext_resource type="PackedScene" uid="uid://cclnkwy5svdqd" path="res://Tilemaps/Dirt.tscn" id="4_7ftoa"]
+[ext_resource type="Script" path="res://World/SaveButton.gd" id="6_7tsvn"]
+[ext_resource type="PackedScene" uid="uid://cxdxpnsqklyxv" path="res://World/ui.tscn" id="6_mnphe"]
+[ext_resource type="Script" path="res://World/DirtContainer.gd" id="8_1eyoa"]
+[ext_resource type="PackedScene" uid="uid://buglspdnhmkq5" path="res://Plants/PlotofDirt.tscn" id="8_u7ir8"]
+[ext_resource type="Script" path="res://World/Plants.gd" id="9_pk4gq"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Water" type="TextureRect" parent="."]
+offset_left = -157.0
+offset_top = -136.0
+offset_right = 1556.0
+offset_bottom = 925.0
+mouse_filter = 2
+texture = ExtResource("1_dfcm1")
+stretch_mode = 1
+
+[node name="Grass" parent="." instance=ExtResource("3_3wn2p")]
+
+[node name="Dirt" parent="." instance=ExtResource("4_7ftoa")]
+
+[node name="Player" parent="." instance=ExtResource("1_5i6yh")]
+z_index = 1
+position = Vector2(200, 116)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+limit_left = -200
+limit_top = -170
+limit_right = 1500
+limit_bottom = 900
+
+[node name="SaveAndExit" type="Button" parent="Player/Camera2D"]
+offset_left = 224.0
+offset_top = -147.0
+offset_right = 344.0
+offset_bottom = -85.0
+scale = Vector2(0.5, 0.5)
+text = "Save & Exit"
+script = ExtResource("6_7tsvn")
+
+[node name="Plants" type="Node" parent="."]
+script = ExtResource("9_pk4gq")
+
+[node name="Fruits" type="Node" parent="."]
+
+[node name="DirtContainer" type="Node2D" parent="."]
+script = ExtResource("8_1eyoa")
+
+[node name="Dirt1" parent="DirtContainer" instance=ExtResource("8_u7ir8")]
+position = Vector2(294, 136)
+
+[node name="Dirt2" parent="DirtContainer" instance=ExtResource("8_u7ir8")]
+position = Vector2(311, 136)
+
+[node name="Dirt3" parent="DirtContainer" instance=ExtResource("8_u7ir8")]
+position = Vector2(328, 136)
+
+[node name="Dirt4" parent="DirtContainer" instance=ExtResource("8_u7ir8")]
+position = Vector2(345, 136)
+
+[node name="Dirt5" parent="DirtContainer" instance=ExtResource("8_u7ir8")]
+position = Vector2(362, 136)
+
+[node name="Dirt6" parent="DirtContainer" instance=ExtResource("8_u7ir8")]
+position = Vector2(379, 136)
+
+[node name="UI" parent="." instance=ExtResource("6_mnphe")]
+
+[connection signal="pressed" from="Player/Camera2D/SaveAndExit" to="Player" method="_on_save_and_exit_pressed"]
+[connection signal="pressed" from="Player/Camera2D/SaveAndExit" to="Player/Camera2D/SaveAndExit" method="_on_pressed"]
+[connection signal="pressed" from="Player/Camera2D/SaveAndExit" to="Plants" method="_on_save_button_pressed"]

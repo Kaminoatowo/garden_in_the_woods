@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0rmvtbu8ypwy"]
+
+[ext_resource type="Script" path="res://Plants/Corn.gd" id="1_5jdm6"]
+[ext_resource type="Texture2D" uid="uid://e22macu44aw0" path="res://Sprout Lands - Sprites - Basic pack/Objects/Corn.png" id="2_ukd0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fsd2"]
+size = Vector2(18, 18)
+
+[node name="Corn" type="Area2D" node_paths=PackedStringArray("timer", "plant")]
+y_sort_enabled = true
+script = ExtResource("1_5jdm6")
+timer = NodePath("Timer")
+plant = NodePath("Sprite")
+max_stage = 6
+plant_name = "Corn"
+fruit_name = "Corn"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ukd0d")
+hframes = 6
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7fsd2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxjjex228qmo4"]
+
+[ext_resource type="Script" path="res://Inventory/Select_harvest.gd" id="1_od6fi"]
+[ext_resource type="Texture2D" uid="uid://dhhpok50dfxb0" path="res://Free Inventory/Inventory_Bar.png" id="2_bhlg2"]
+[ext_resource type="PackedScene" uid="uid://cf01hfv2bsnld" path="res://Inventory/Harvest_basket.tscn" id="3_10khl"]
+
+[node name="Select Harvest" type="Node2D"]
+script = ExtResource("1_od6fi")
+
+[node name="InventoryBar" type="Sprite2D" parent="."]
+position = Vector2(200, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_bhlg2")
+
+[node name="Harvest1" parent="." instance=ExtResource("3_10khl")]
+
+[node name="Harvest2" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(67, 32)
+
+[node name="Harvest3" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(105, 32)
+
+[node name="Harvest4" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(143, 32)
+
+[node name="Harvest5" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(181, 32)
+
+[node name="Harvest6" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(219, 32)
+
+[node name="Harvest7" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(257, 32)
+
+[node name="Harvest8" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(295, 32)
+
+[node name="Harvest9" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(333, 32)
+
+[node name="Harvest10" parent="." instance=ExtResource("3_10khl")]
+position = Vector2(371, 32)

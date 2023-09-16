@@ -1,0 +1,16 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://6doxtcpjqy2g"]
+
+[ext_resource type="Texture2D" uid="uid://bab40ykut6pku" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Water1.png" id="1_3emep"]
+[ext_resource type="Texture2D" uid="uid://cgh0sw57esf7s" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Water2.png" id="2_vg54l"]
+[ext_resource type="Texture2D" uid="uid://byul6v6pdi6wc" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Water3.png" id="3_ml42v"]
+[ext_resource type="Texture2D" uid="uid://qa6g4l47e8i1" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Water4.png" id="4_peaje"]
+
+[resource]
+frames = 4
+frame_0/texture = ExtResource("1_3emep")
+frame_1/texture = ExtResource("2_vg54l")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_ml42v")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_peaje")
+frame_3/duration = 1.0

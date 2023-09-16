@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://buglspdnhmkq5"]
+
+[ext_resource type="Texture2D" uid="uid://dt47t3vdu0g7y" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Dirt.png" id="1_0rh8r"]
+[ext_resource type="Script" path="res://Plants/PlotofDirt.gd" id="1_utcsm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e02ss"]
+size = Vector2(18, 18)
+
+[node name="Dirt" type="Area2D"]
+script = ExtResource("1_utcsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e02ss")
+
+[node name="Dirt" type="Sprite2D" parent="."]
+texture = ExtResource("1_0rh8r")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

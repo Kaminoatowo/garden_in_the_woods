@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxdxpnsqklyxv"]
+
+[ext_resource type="Script" path="res://World/Date.gd" id="1_v1kwo"]
+[ext_resource type="Script" path="res://Inventory/SeedInventory.gd" id="2_dlasv"]
+[ext_resource type="Texture2D" uid="uid://btdau64xs2iua" path="res://UI/Inventory_background.png" id="3_sfoxw"]
+[ext_resource type="PackedScene" uid="uid://dqkqift654w7f" path="res://Inventory/Select_seed.tscn" id="4_ptmjq"]
+[ext_resource type="Texture2D" uid="uid://e22macu44aw0" path="res://Sprout Lands - Sprites - Basic pack/Objects/Corn.png" id="5_wn5od"]
+[ext_resource type="Script" path="res://Inventory/HarvestInventory.gd" id="6_moqaf"]
+[ext_resource type="PackedScene" uid="uid://dxjjex228qmo4" path="res://Inventory/Select_harvest.tscn" id="7_j5hdh"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Date" type="Label" parent="."]
+offset_left = 1042.0
+offset_top = 4.0
+offset_right = 1082.0
+offset_bottom = 30.0
+text = "Time"
+script = ExtResource("1_v1kwo")
+
+[node name="SeedInventory" type="Button" parent="." node_paths=PackedStringArray("selector")]
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 45.0
+offset_bottom = 45.0
+script = ExtResource("2_dlasv")
+selector = NodePath("Select Seed")
+
+[node name="InventoryIcon" type="Sprite2D" parent="SeedInventory"]
+position = Vector2(20, 19)
+scale = Vector2(2, 2)
+texture = ExtResource("3_sfoxw")
+
+[node name="Select Seed" parent="SeedInventory" instance=ExtResource("4_ptmjq")]
+position = Vector2(37, 32)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="SeedInventory"]
+position = Vector2(20, 18)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_wn5od")
+hframes = 6
+
+[node name="HarvestInventory" type="Button" parent="." node_paths=PackedStringArray("selector")]
+offset_left = 5.0
+offset_top = 53.0
+offset_right = 45.0
+offset_bottom = 92.0
+script = ExtResource("6_moqaf")
+selector = NodePath("Select Harvest")
+
+[node name="InventoryIcon" type="Sprite2D" parent="HarvestInventory"]
+position = Vector2(20, 19)
+scale = Vector2(2, 2)
+texture = ExtResource("3_sfoxw")
+
+[node name="Select Harvest" parent="HarvestInventory" instance=ExtResource("7_j5hdh")]
+position = Vector2(37, 32)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="HarvestInventory"]
+position = Vector2(20, 19)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_wn5od")
+hframes = 6
+frame = 5
+
+[connection signal="pressed" from="SeedInventory" to="SeedInventory" method="_on_pressed"]
+[connection signal="pressed" from="HarvestInventory" to="HarvestInventory" method="_on_pressed"]

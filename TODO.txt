@@ -1,0 +1,49 @@
+Keep plant and fruit in the same script? NO
+	.make "seed", "plant", "fruit" classes
+		.plant class is needed to let the plants grow and interact with player 
+		and environment
+		.seed and fruit classes store characteristics of the plant
+			.seed is needed just to store characteristics and pass them to fruits
+			.fruit not only stores characteristics, but also is the starting 
+			point to use the crop in recipes, positions, ...
+
+Introduce randomness in fruit generation
+	.random object to create number of spawned fruits
+	.create class "fruit" to store fruits' characteristics
+		.assign texture to fruit based on plant's texture
+		.inherit characteristics from plants
+			."seed" class should exists, which contains fruit's characteristics
+		
+
+Make better UI:
+	.inventory
+		.seeds
+		.harvests
+	.planning
+	.plants book
+
+Make save automatic
+
+!! Idee per il gioco completo
+
+Animazione quando il giocatore entra in acqua
+
+Possibilità di raccogliere l'acqua con secchiello
+
+Possibilità di creare canali d'acqua per irrigare l'orto
+
+Modificare la propria casa e/o costruire la casa
+
+Isole e barche per muoversi sull'acqua
+
+!! Animali che si possono incontrare
+
+Personaggio giocabile: tasso
+
+Personaggi di supporto: gatto, volpe, lontra,
+
+Animali da sfondo: farfalle di giorno, lucciole di notte
+
+!! Possibili nomi
+
+Mondo nascosto
